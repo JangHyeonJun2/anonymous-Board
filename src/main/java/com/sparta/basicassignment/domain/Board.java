@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Board {
+public class Board extends Timestamped{
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
