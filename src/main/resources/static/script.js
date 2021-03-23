@@ -11,6 +11,7 @@ function showBoards() {
         type: "GET",
         url: "api/board",
         success: function (response) {
+
             for (let i = 0; i < response.length; i++) {
                 let board = response[i];
                 let id = board.id;
@@ -19,13 +20,31 @@ function showBoards() {
                 let content = board.contents;
                 let modifiedAt = board.modifiedAt;
 
-                addHTML(id,user,content,modifiedAt);
+                addHTML(id,user,title,content,modifiedAt);
             }
         }
     });
 
-    function addHTML() {
+    function addHTML(id,user,title,content,modifiedAt) {
+        let tempHtml = `<div class="card card-line">
+                                <div class="card-header">
+                                    <div id="${id}-username" class="username">
+                                        ${user}
+                                    </div>
+                                    <div class="date">
+                                        ${modifiedAt}
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="#">${title}</a>
+                                    </h5>
+                                    <p class="card-text">${content}</p>
+                                </div>
+                            </div>`;
 
+        // 2. #cards-box 에 HTML을 붙인다.
+        $('#card-box').append(tempHtml);
     }
 
 }

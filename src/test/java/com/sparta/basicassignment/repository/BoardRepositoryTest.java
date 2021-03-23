@@ -39,6 +39,7 @@ class BoardRepositoryTest {
         List<Board> allBoards = boardService.findAllBoards();
         for (int i=0; i<allBoards.size(); i++) {
             System.out.println(allBoards.get(i).getModifiedAt());
+
         }
     }
 
