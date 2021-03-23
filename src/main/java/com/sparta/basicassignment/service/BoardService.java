@@ -3,6 +3,7 @@ package com.sparta.basicassignment.service;
 import com.sparta.basicassignment.domain.Board;
 import com.sparta.basicassignment.dto.BoardRequestDto;
 import com.sparta.basicassignment.repository.BoardRepository;
+import com.sparta.basicassignment.utils.CreateUUID;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +20,8 @@ public class BoardService {
     @Transactional
     public void createBoard(BoardRequestDto boardRequestDto) {
         Board board = new Board(boardRequestDto);
+        CreateUUID createUUID = new CreateUUID();
+        board.setUuid(createUUID.makeUUID());
         boardRepository.svae(board);
     }
 }

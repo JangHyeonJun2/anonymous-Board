@@ -4,11 +4,13 @@ import com.sparta.basicassignment.dto.BoardRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Board extends Timestamped{
@@ -18,6 +20,8 @@ public class Board extends Timestamped{
     private String title;
 
     private String contents;
+
+    private String uuid;
 
     public Board(BoardRequestDto boardRequestDto) {
         this.title = boardRequestDto.getTitle();
