@@ -1,9 +1,43 @@
+$(document).ready(function () {
+    // HTML 문서를 로드할 때마다 실행합니다.
+    showBoards();
+});
+
+function showBoards() {
+    //기존 내용을 지운다.
+    $('#card-box').empty();
+    //게시판 목록을 불러와서 HTML을 붙인다.
+    $.ajax({
+        type: "GET",
+        url: "api/board",
+        success: function (response) {
+            for (let i = 0; i < response.length; i++) {
+                let board = response[i];
+                let id = board.id;
+                let user = board.uuid;
+                let title = board.title;
+                let content = board.contents;
+                let modifiedAt = board.modifiedAt;
+
+                addHTML(id,user,content,modifiedAt);
+            }
+        }
+    });
+
+    function addHTML() {
+
+    }
+
+}
+
+
+
 function isValidContents(str) {
     if (str == '') {
         alert('내용을 입력해주세요');
         return false;
-    }
-    return true;
+    }else
+        return true;
 }
 
 function writePost() {
@@ -12,7 +46,7 @@ function writePost() {
     let contents = $('#inputText').val();
 
     //제목과 내용이 없으면 경고창 띄우기
-    if (isValidContents(title) || isValidContents(contents)) {
+    if (isValidContents(title) && isValidContents(contents)) {
         //전달할 data JSON으로 만듭니다.
         let data = {'title' : title , 'contents' : contents};
 
@@ -27,7 +61,7 @@ function writePost() {
             }
         });
     } else {
-        return
+        return;
     }
 
 
