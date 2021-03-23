@@ -37,7 +37,7 @@ function showBoards() {
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="#">${title}</a>
+                                        <a href="detail.html?id=${id}">${title}</a>
                                     </h5>
                                     <p class="card-text">${content}</p>
                                 </div>

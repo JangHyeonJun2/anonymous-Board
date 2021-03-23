@@ -21,7 +21,8 @@
     background-color: gainsboro;
     border-radius: 5px;
 }
-.card-header {
+.card-header,
+.middle-wrap-button{
     display: flex;
     justify-content: space-between;
 }

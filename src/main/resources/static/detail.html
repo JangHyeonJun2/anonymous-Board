@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- css 파일 외부에서 가져오기-->
+    <link rel="stylesheet" href="./style.css">
+    <title>게시판 상세페이지</title>
+</head>
+<body>
+<div class="jumbotron">
+    <div class="jumbotron-wrap">
+        <h1>익명 게시판</h1>
+        <p>자신의 의사를 맘껏 표출하세요!</p>
+    </div>
+</div>
+
+<div class="middle-wrap">
+    <div class="area-write" id="area-wrap-detail">
+        <div class="mb-3">
+            <label for="inputTitle" class="form-label">제목</label>
+            <input type="text" class="form-control" id="inputTitle">
+        </div>
+        <div class="mb-3">
+            <label for="inputText" class="form-label">내용</label>
+            <textarea class="form-control" id="inputText" rows="5"></textarea>
+        </div>
+        <div class="middle-wrap-button">
+            <button class="btn btn-primary btn-primary-sub" onclick="writePost()">수정하기</button>
+            <button class="btn btn-primary btn-primary-sub" onclick="writePost()">삭제하기</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
