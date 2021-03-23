@@ -1,0 +1,35 @@
+.jumbotron-wrap {
+    width: 500px;
+    margin: 1px auto;
+}
+.middle-wrap {
+    width: 500px;
+    margin: 10px auto;
+}
+.footer-wrap {
+    width: 520px;
+    margin: 50px auto;
+    padding-left: 10px;
+}
+.jumbotron-wrap > h1 {
+    padding-left: 80px;
+}
+.jumbotron-wrap > p {
+    padding-left: 100px;
+}
+.card-line {
+    background-color: gainsboro;
+    border-radius: 5px;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card > .card-header {
+    /*text-align: right;*/
+    font-size: smaller;
+}
+.card-body > h5, .card-body > p {
+    font-size: large;
+}

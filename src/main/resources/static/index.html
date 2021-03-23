@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- css 파일 외부에서 가져오기-->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- 자바스크립트 외부에서 가져오기-->
+    <script src="script.js"></script>
+    <title>익명게시판</title>
+
+</head>
+<body>
+
+<div class="jumbotron">
+    <div class="jumbotron-wrap">
+        <h1>익명 게시판</h1>
+        <p>자신의 의사를 맘껏 표출하세요!</p>
+<!--        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->
+    </div>
+</div>
+<div class="middle-wrap">
+    <div class="area-write">
+        <textarea class="field" placeholder="공유하고 싶은 소식을 입력해주세요" name="contents" id="contents" cols="70" rows="10"></textarea>
+                    <button class="btn btn-danger" onclick="writePost()">작성하기</button>
+    </div>
+</div>
+<div class="footer-wrap">
+    <div class="card card-line">
+        <div class="card-header">
+            <div id="1-username" class="username">
+                작성자
+            </div>
+            <div class="date">
+                October 10, 2020
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="#">Special title treatment</a>
+            </h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<!--            <a href="#" class="btn btn-primary">Go somewhere</a>-->
+        </div>
+    </div>
+    <div class="card card-line">
+        <div class="card-header">
+            <div id="2-username" class="username">
+                작성자
+            </div>
+            <div class="date">
+                October 10, 2020
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="#">Special title treatment</a>
+            </h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <!--            <a href="#" class="btn btn-primary">Go somewhere</a>-->
+        </div>
+    </div>
+    <div class="card card-line">
+        <div class="card-header">
+            <div id="3-username" class="username">
+                작성자
+            </div>
+            <div class="date">
+                October 10, 2020
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="#">Special title treatment</a>
+            </h5>
+            <p class="card-text">
+                With supporting text below as a natural lead-in to additional content.
+                With supporting text below as a natural lead-in to additional content.
+                With supporting text below as a natural lead-in to additional content.
+                With supporting text below as a natural lead-in to additional content.
+            </p>
+            <!--            <a href="#" class="btn btn-primary">Go somewhere</a>-->
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
