@@ -30,8 +30,15 @@
 </div>
 <div class="middle-wrap">
     <div class="area-write">
-        <textarea class="field" placeholder="공유하고 싶은 소식을 입력해주세요" name="contents" id="contents" cols="70" rows="10"></textarea>
-                    <button class="btn btn-danger" onclick="writePost()">작성하기</button>
+        <div class="mb-3">
+            <label for="inputTitle" class="form-label">제목</label>
+            <input type="title" class="form-control" id="inputTitle" placeholder="멋진 제목을 입력해주세요.">
+        </div>
+        <div class="mb-3">
+            <label for="inputText" class="form-label">내용</label>
+            <textarea class="form-control" placeholder="공유하고 싶은 소식을 입력해주세요." id="inputText" rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary btn-primary-sub" onclick="writePost()">작성하기</button>
     </div>
 </div>
 <div class="footer-wrap">

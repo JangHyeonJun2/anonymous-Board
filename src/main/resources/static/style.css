@@ -33,3 +33,7 @@
 .card-body > h5, .card-body > p {
     font-size: large;
 }
+
+.btn-primary-sub {
+    margin-top: 10px;
+}
