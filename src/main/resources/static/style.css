@@ -18,7 +18,7 @@
     padding-left: 100px;
 }
 .card-line {
-    background-color: gainsboro;
+    background-color: whitesmoke;
     border-radius: 5px;
 }
 .card-header,
@@ -40,4 +40,7 @@
 }
 .card-title-font {
     color: deepskyblue;
+}
+.card-line:hover {
+    border: red 1px solid;
 }

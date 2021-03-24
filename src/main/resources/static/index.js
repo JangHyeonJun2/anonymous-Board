@@ -27,7 +27,7 @@ function showBoards() {
 
     function addHTML(id,user,title,content,modifiedAt) {
         let link = "detail.html";
-        let tempHtml = `<div class="card card-line">
+        let tempHtml = `<div class="card card-line" onclick=location.href="detail.html?"+${id}>
                                 <div class="card-header">
                                     <div id="${id}-username" class="username">
                                         ${user}
@@ -38,7 +38,7 @@ function showBoards() {
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <div class="card-title-font" onclick=location.href="detail.html?"+${id}>${title}</div>
+                                        <div class="card-title">${title}</div>
                                     </h5>
                                     <p class="card-text">${content}</p>
                                 </div>
