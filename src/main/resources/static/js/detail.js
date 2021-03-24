@@ -86,3 +86,5 @@ function isValidContents(str) {
     }else
         return true;
 }
+
+
