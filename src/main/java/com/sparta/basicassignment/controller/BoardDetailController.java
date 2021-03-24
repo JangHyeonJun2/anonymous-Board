@@ -27,4 +27,9 @@ public class BoardDetailController {
         boardDetailService.update(id,requestDto);
     }
 
+    @DeleteMapping("/api/detail/board/{id}")
+    public void deleteDetailBoard(@PathVariable Long id) {
+        boardDetailService.delete(id);
+    }
+
 }

@@ -62,8 +62,21 @@ function writePut(id) {
     }
 }
 
-function writeDelete() {
-    
+function writeDelete(id) {
+    if (confirm("삭제하시겠습니까?")) {
+        $.ajax({
+            type: "DELETE",
+            url: `/api/detail/board/${id}`,
+            success: function (response) {
+                alert("삭제되었습니다.");
+                location.href = "index.html";
+            }
+
+        })
+    }else {
+        return;
+    }
+
 }
 
 function isValidContents(str) {

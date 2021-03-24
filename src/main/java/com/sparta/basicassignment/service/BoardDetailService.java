@@ -26,4 +26,9 @@ public class BoardDetailService {
         Board findDetailBoard = boardDetailRepository.findDetailBoard(id);
         findDetailBoard.update(requestDto);
     }
+
+    @Transactional
+    public void delete(Long id) {
+        boardDetailRepository.deleteById(id);
+    }
 }
