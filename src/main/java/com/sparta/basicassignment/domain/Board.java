@@ -1,10 +1,12 @@
 package com.sparta.basicassignment.domain;
 
+import com.sparta.basicassignment.dto.BoardDetailRequestDto;
 import com.sparta.basicassignment.dto.BoardRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 
@@ -26,5 +28,10 @@ public class Board extends Timestamped{
     public Board(BoardRequestDto boardRequestDto) {
         this.title = boardRequestDto.getTitle();
         this.contents = boardRequestDto.getContents();
+    }
+
+    public void update(BoardDetailRequestDto requestDto) {
+        this.title = requestDto.getTitle();
+        this.contents = requestDto.getContents();
     }
 }

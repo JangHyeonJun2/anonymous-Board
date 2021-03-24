@@ -1,11 +1,10 @@
 package com.sparta.basicassignment.controller;
 
 import com.sparta.basicassignment.domain.Board;
+import com.sparta.basicassignment.dto.BoardDetailRequestDto;
 import com.sparta.basicassignment.service.BoardDetailService;
 import com.sparta.basicassignment.service.BoardService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +20,11 @@ public class BoardDetailController {
     @GetMapping("/api/detail/board/{id}")
     public Board getDetailBoard(@PathVariable Long id) {
         return boardDetailService.findAllDetailBoard(id);
+    }
+
+    @PutMapping("/api/detail/board/{id}")
+    public void putDetailBoard(@PathVariable Long id, @RequestBody BoardDetailRequestDto requestDto) {
+        boardDetailService.update(id,requestDto);
     }
 
 }
