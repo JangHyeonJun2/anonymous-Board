@@ -5,7 +5,7 @@ import java.util.UUID;
 public class CreateUUID {
     public String makeUUID() {
         UUID uuid = UUID.randomUUID();
-        return uuid.toString();
+        return uuid.toString().substring(0,7);
     }
 
 

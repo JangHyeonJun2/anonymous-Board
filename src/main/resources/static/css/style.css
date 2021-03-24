@@ -20,6 +20,8 @@
 .card-line {
     background-color: whitesmoke;
     border-radius: 5px;
+    border: black 1px solid;
+    margin-bottom: 20px;
 }
 .card-header,
 .middle-wrap-button{
@@ -35,12 +37,35 @@
     font-size: large;
 }
 
-.btn-primary-sub {
+.btn-primary-sub{
     margin-top: 10px;
 }
 .card-title-font {
     color: deepskyblue;
 }
 .card-line:hover {
-    border: red 1px solid;
+    border: red 2px solid;
+}
+.card-title,
+.card-header {
+    border-bottom: black 1px solid;
+}
+
+.username,
+.card-title,
+.card-text{
+    margin-left: 5px;
+}
+
+.date {
+    margin-right: 5px;
+}
+
+.zoom {
+    transition: transform .3s; /* Animation */;
+    /*margin: 0 auto;*/
+}
+
+.zoom:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }

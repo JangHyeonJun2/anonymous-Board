@@ -18,7 +18,7 @@ function showBoards() {
                 let user = board.uuid;
                 let title = board.title;
                 let content = board.contents;
-                let modifiedAt = board.modifiedAt;
+                let modifiedAt = board.modifiedAt.substring(0,10);
 
                 addHTML(id,user,title,content,modifiedAt);
             }
@@ -27,10 +27,10 @@ function showBoards() {
 
     function addHTML(id,user,title,content,modifiedAt) {
         let link = "detail.html";
-        let tempHtml = `<div class="card card-line" onclick=location.href="detail.html?"+${id}>
+        let tempHtml = `<div class="card card-line zoom" onclick=location.href="detail.html?"+${id}>
                                 <div class="card-header">
                                     <div id="${id}-username" class="username">
-                                        ${user}
+                                        ID: ${user}
                                     </div>
                                     <div class="date">
                                         ${modifiedAt}

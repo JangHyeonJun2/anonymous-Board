@@ -21,6 +21,7 @@ public class Board extends Timestamped{
 
     private String title;
 
+    @Lob
     private String contents;
 
     private String uuid;
