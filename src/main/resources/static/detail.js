@@ -1,12 +1,15 @@
 $(document).ready(function () {
+    temp = location.href.split("?");
+    let id = temp[1];
     // HTML 문서를 로드할 때마다 실행합니다.
-    showDetailBoard();
+    showDetailBoard(id);
 });
 
-function showDetailBoard() {
+function showDetailBoard(id) {
+    $('#area-wrap-detail').empty();
     $.ajax({
         type: "GET",
-        url: "/api/detail/board",
+        url: `/api/detail/board/${id}`,
         success: function (response) {
             let title = response.title;
             let content = response.contents;
@@ -16,9 +19,10 @@ function showDetailBoard() {
     });
 
     function addHTML(title, content) {
+
         let tempHTML = `<div class="mb-3">
                             <label for="inputTitle" class="form-label">제목</label>
-                            <input type="text" class="form-control" id="inputTitle">${title}
+                            <input type="text" class="form-control" id="inputTitle" value="${title}" >
                         </div>
                         <div class="mb-3">
                             <label for="inputText" class="form-label">내용</label>
@@ -29,6 +33,8 @@ function showDetailBoard() {
                             <button class="btn btn-primary btn-primary-sub" onclick="writeDelete()">삭제하기</button>
                         </div>`;
 
+
+        $('#area-wrap-detail').append(tempHTML);
     }
 }
 
