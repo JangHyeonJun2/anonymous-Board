@@ -20,5 +20,9 @@ public class CommentService {
         this.boardRepository = boardRepository;
     }
 
+    @Transactional
+    public void save(Comment comment) {
+        commentRepository.save(comment);
+    }
 
 }

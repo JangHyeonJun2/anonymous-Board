@@ -1,6 +1,7 @@
+let detailId;
 $(document).ready(function () {
     temp = location.href.split("?");
-    let id = temp[1];
+    detailId = temp[1];
     // HTML 문서를 로드할 때마다 실행합니다.
     showDetailBoard(id);
 });
@@ -86,5 +87,7 @@ function isValidContents(str) {
     }else
         return true;
 }
+
+
 
 
