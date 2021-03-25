@@ -1,6 +1,7 @@
 package com.sparta.basicassignment.service;
 
 import com.sparta.basicassignment.domain.Board;
+import com.sparta.basicassignment.domain.Comment;
 import com.sparta.basicassignment.dto.BoardRequestDto;
 import com.sparta.basicassignment.repository.BoardRepository;
 import com.sparta.basicassignment.utils.CreateUUID;
@@ -34,5 +35,13 @@ public class BoardService {
         LocalDateTime startDatetime = LocalDateTime.of(LocalDate.now().minusDays(1), LocalTime.of(0,0,0));//어제
         LocalDateTime endDatetime = LocalDateTime.of(LocalDate.now(), LocalTime.of(23,59,59));
         return boardRepository.findAllByModifiedAtBetweenOrderByModifiedAtDesc(startDatetime,endDatetime);
+    }
+
+    public Board findById(Long id) {
+        return boardRepository.findById(id);
+    }
+
+    public List<Board> findComments(Long id) {
+        return boardRepository.findComments(id);
     }
 }

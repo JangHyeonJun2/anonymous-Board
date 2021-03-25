@@ -9,6 +9,8 @@ import lombok.Setter;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -17,6 +19,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Board extends Timestamped{
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "BOARD_ID")
     private Long id;
 
     private String title;
@@ -25,6 +28,10 @@ public class Board extends Timestamped{
     private String contents;
 
     private String uuid;
+
+//    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER)
+//    private List<Comment> comments = new ArrayList<>();
+
 
     public Board(BoardRequestDto boardRequestDto) {
         this.title = boardRequestDto.getTitle();
