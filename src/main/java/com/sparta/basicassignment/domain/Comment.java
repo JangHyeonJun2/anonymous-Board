@@ -31,10 +31,8 @@ public class Comment extends Timestamped {
     private Board board;
 
     //편의 메서드
-
-
-//    public void setBoard(Board board) {
-//        this.board = board;
-//        board.getComments().add(this);
-//    }
+    public void changeBoard(Board board) {
+        this.board = board;
+        board.getComments().add(this);
+    }
 }

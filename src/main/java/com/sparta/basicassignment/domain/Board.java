@@ -29,8 +29,8 @@ public class Board extends Timestamped{
 
     private String uuid;
 
-//    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER)
-//    private List<Comment> comments = new ArrayList<>();
+    @OneToMany(mappedBy = "board")//, fetch = FetchType.EAGER
+    private List<Comment> comments = new ArrayList<>();
 
 
     public Board(BoardRequestDto boardRequestDto) {

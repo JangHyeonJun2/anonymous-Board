@@ -41,7 +41,5 @@ public class BoardService {
         return boardRepository.findById(id);
     }
 
-    public List<Board> findComments(Long id) {
-        return boardRepository.findComments(id);
-    }
+
 }

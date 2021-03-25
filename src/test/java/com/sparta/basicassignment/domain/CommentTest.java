@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import java.util.List;
 
 @SpringBootTest
@@ -23,14 +25,41 @@ class CommentTest {
     private BoardService boardService;
     @Autowired
     private CommentService commentService;
+    @Autowired
+    EntityManager em;
 
     @Test
 //    @Transactional
     public void showRelation() {
+
+        BoardRequestDto boardDto = new BoardRequestDto();
+        boardDto.setTitle("board1");
+        boardDto.setContents("boardContents1");
+        boardService.createBoard(boardDto);
+
+        Comment comment = new Comment();
+        comment.setTitle("comment1");
+        comment.setContents("commentContents1");
+//        commentRepository.save(comment);
+
+        Board byId = boardService.findById(1L);
+        comment.setBoard(byId);
+
+        commentRepository.save(comment);
+        System.out.println("=============");
+        System.out.println(comment.getBoard().getTitle());
+        System.out.println(byId.getComments().get(0).getTitle());
+        System.out.println("=============");
+
+
+
+
+
 //        BoardRequestDto boardDto = new BoardRequestDto();
 //        boardDto.setTitle("board1");
 //        boardDto.setContents("boardContents1");
 //        boardService.createBoard(boardDto);
+//
 //
 //        Comment comment = new Comment();
 //        comment.setTitle("comment1");
@@ -38,27 +67,9 @@ class CommentTest {
 //        Board byId = boardService.findById(1L);
 //        comment.setBoard(byId);
 //        commentRepository.save(comment);
-//        System.out.println("=============");
+//
 //        System.out.println(comment.getBoard().getTitle());
-//        System.out.println(byId.getComments().get(0).getTitle());
-        System.out.println("=============");
-
-
-        BoardRequestDto boardDto = new BoardRequestDto();
-        boardDto.setTitle("board1");
-        boardDto.setContents("boardContents1");
-        boardService.createBoard(boardDto);
-
-
-        Comment comment = new Comment();
-        comment.setTitle("comment1");
-        comment.setContents("commentContents1");
-        Board byId = boardService.findById(1L);
-        comment.setBoard(byId);
-        commentRepository.save(comment);
-
-        System.out.println(comment.getBoard().getTitle());
-
-        Assertions.assertThat(comment.getBoard().getTitle()).isEqualTo("board1");
+//
+//        Assertions.assertThat(comment.getBoard().getTitle()).isEqualTo("board1");
     }
 }
