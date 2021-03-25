@@ -2,8 +2,9 @@ let detailId;
 $(document).ready(function () {
     temp = location.href.split("?");
     detailId = temp[1];
+    console.log(detailId);
     // HTML 문서를 로드할 때마다 실행합니다.
-    showDetailBoard(id);
+    showDetailBoard(detailId);
 });
 
 function showDetailBoard(id) {

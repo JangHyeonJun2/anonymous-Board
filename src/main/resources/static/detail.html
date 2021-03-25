@@ -7,6 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="js/detail.js"></script>
+    <script src="js/comment.js"></script>
 
     <!-- css 파일 외부에서 가져오기-->
     <link rel="stylesheet" href="css/style.css">
@@ -166,8 +167,8 @@
                     <div class="modal-body">
                         <form>
                             <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">제목</label>
-                                <input type="text" class="form-control" id="recipient-name">
+                                <label for="commentTitle-name" class="col-form-label">제목</label>
+                                <input type="text" class="form-control" id="commentTitle-name">
                             </div>
                             <div class="mb-3">
                                 <label for="message-text" class="col-form-label">내용</label>
@@ -177,7 +178,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                        <button type="button" class="btn btn-primary" onclick="">남기기</button>
+                        <button type="button" class="btn btn-primary" >남기기</button> <!-- onclick="addComment(detailId)"-->
                     </div>
                 </div>
             </div>

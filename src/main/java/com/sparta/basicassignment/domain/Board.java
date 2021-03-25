@@ -2,10 +2,7 @@ package com.sparta.basicassignment.domain;
 
 import com.sparta.basicassignment.dto.BoardDetailRequestDto;
 import com.sparta.basicassignment.dto.BoardRequestDto;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
@@ -15,7 +12,6 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class Board extends Timestamped{
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,6 +26,7 @@ public class Board extends Timestamped{
     private String uuid;
 
     @OneToMany(mappedBy = "board")//, fetch = FetchType.EAGER
+    @ToString.Exclude
     private List<Comment> comments = new ArrayList<>();
 
 

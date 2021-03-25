@@ -1,5 +1,6 @@
 package com.sparta.basicassignment.domain;
 
+import com.sparta.basicassignment.dto.CommentRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,6 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class Comment extends Timestamped {
     @Id
@@ -34,5 +34,10 @@ public class Comment extends Timestamped {
     public void changeBoard(Board board) {
         this.board = board;
         board.getComments().add(this);
+    }
+
+    public Comment(CommentRequestDto commentRequestDto) {
+        this.title = commentRequestDto.getTitle();
+        this.contents = commentRequestDto.getContents();
     }
 }

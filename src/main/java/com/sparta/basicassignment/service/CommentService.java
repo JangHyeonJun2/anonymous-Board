@@ -2,8 +2,10 @@ package com.sparta.basicassignment.service;
 
 import com.sparta.basicassignment.domain.Board;
 import com.sparta.basicassignment.domain.Comment;
+import com.sparta.basicassignment.dto.CommentRequestDto;
 import com.sparta.basicassignment.repository.BoardRepository;
 import com.sparta.basicassignment.repository.CommentRepository;
+import com.sparta.basicassignment.utils.CreateUUID;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,8 +23,12 @@ public class CommentService {
     }
 
     @Transactional
-    public void save(Comment comment) {
+    public void save(Long id, CommentRequestDto commentRequestDto) {
+        Comment comment = new Comment(commentRequestDto);
+        Board findBoard = boardRepository.findById(id);
+        CreateUUID createUUID = new CreateUUID();
+        comment.setUuid(createUUID.makeUUID());
+        comment.changeBoard(findBoard);
         commentRepository.save(comment);
     }
-
 }

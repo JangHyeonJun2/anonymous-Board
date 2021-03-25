@@ -31,22 +31,22 @@ class CommentTest {
         @Transactional
         public void showRelation() {
 
-            BoardRequestDto boardDto = new BoardRequestDto();
-            boardDto.setTitle("board1");
-            boardDto.setContents("boardContents1");
-            boardService.createBoard(boardDto);
-
-            Comment comment = new Comment();
-            comment.setTitle("comment1");
-            comment.setContents("commentContents1");
-            Board byId = boardService.findById(1L);
-            comment.changeBoard(byId);
-            commentService.save(comment);
-
-            System.out.println("=============");
-            System.out.println(comment.getBoard().getTitle());
-            System.out.println(byId.getComments().get(0).getTitle());
-            System.out.println("=============");
+//            BoardRequestDto boardDto = new BoardRequestDto();
+//            boardDto.setTitle("board1");
+//            boardDto.setContents("boardContents1");
+//            boardService.createBoard(boardDto);
+//
+//            Comment comment = new Comment();
+//            comment.setTitle("comment1");
+//            comment.setContents("commentContents1");
+//            Board byId = boardService.findById(1L);
+//            comment.changeBoard(byId);
+//            commentService.save(comment);
+//
+//            System.out.println("=============");
+//            System.out.println(comment.getBoard().getTitle());
+//            System.out.println(byId.getComments().get(0).getTitle());
+//            System.out.println("=============");
 
 
 
