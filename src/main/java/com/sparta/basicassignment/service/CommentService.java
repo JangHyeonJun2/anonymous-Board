@@ -28,7 +28,7 @@ public class CommentService {
         Board findBoard = boardRepository.findById(id);
         CreateUUID createUUID = new CreateUUID();
         comment.setUuid(createUUID.makeUUID());
-//        comment.changeBoard(findBoard);
+        comment.changeBoard(findBoard);
         commentRepository.save(comment);
     }
 }

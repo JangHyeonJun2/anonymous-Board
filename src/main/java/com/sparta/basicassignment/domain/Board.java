@@ -3,8 +3,6 @@ package com.sparta.basicassignment.domain;
 import com.sparta.basicassignment.dto.BoardDetailRequestDto;
 import com.sparta.basicassignment.dto.BoardRequestDto;
 import lombok.*;
-import net.minidev.json.annotate.JsonIgnore;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.ArrayList;

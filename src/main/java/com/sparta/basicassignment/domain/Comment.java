@@ -5,8 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import net.minidev.json.annotate.JsonIgnore;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+
 
 import javax.persistence.*;
 
@@ -31,11 +30,11 @@ public class Comment extends Timestamped {
     @JoinColumn(name = "BOARD_ID")
     private Board board;
 
-//    //편의 메서드
-//    public void changeBoard(Board board) {
-//        this.board = board;
+    //편의 메서드
+    public void changeBoard(Board board) {
+        this.board = board;
 //        board.getComments().add(this);
-//    }
+    }
 
     public Comment(CommentRequestDto commentRequestDto) {
         this.title = commentRequestDto.getTitle();
