@@ -17,6 +17,7 @@ function addComment(id) {
             success: function (response) {
                 alert("댓글이 작성되었습니다.");
                 //여기서 리다이렉스 하고 싶은데 에러남...
+                return;
             }
         })
     }else {
