@@ -61,13 +61,6 @@ public class UserService {
         }
     }
 
-    public void validateDuplicateMember(SignupRequestDto requestDto) {
-        List<User> findeMembers = userRepository.findByName(requestDto.getUsername());
-        if (!findeMembers.isEmpty()) {
-            throw new IllegalStateException("이미 존재하는 회원입니다.");
-        }
-        System.out.println(findeMembers.size());
-    }
 
     @Transactional
     public void save(User user) {
