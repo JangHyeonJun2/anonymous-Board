@@ -1,3 +1,8 @@
+var username = false;
+var email = false;
+var password = false;
+var passwordconfirm = false;
+
 
 $(document).ready(function () {
     $("#InputUserName").on("input", function(){
@@ -20,8 +25,26 @@ $(document).ready(function () {
             }// success 종료
         })
     });// function 종료
+    //회원가입 버튼(회원가입 기능 작동)
+    $(".join_button").click(function(){
+
+        /*입력값 변수*/
+        var username = $('#InputUserName').val();
+        var email = $('#InputEmail').val()
+        var password = $('#InputPassword').val()
+        var confirmPassword = $('#OneMoreInputPassword').val()
+
+
+        /* 아이디 유효성검사 */
+        if(id == ""){
+            $('.un_ck').css('display','block');
+            idCheck = false;
+        }else{
+            $('.un_ck').css('display', 'none');
+            idCheck = true;
+        }
+
+        //$("#join_form").attr("action", "/member/join");
+        //$("#join_form").submit();
+    });
 });
-var username = false;
-var email = false;
-var password = false;
-var passwordconfirm = false;
